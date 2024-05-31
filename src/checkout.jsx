@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Style.css";
+import { useDispatch } from "react-redux";
+import { updateTotalCost } from "./actions";
 
 export default function Checkout({ Products }) {
   // const { setTotal } = useContext(TotalContext);
+
+  const dispatch = useDispatch();
   const [quantities, setQuantities] = useState(Products.map(() => 1));
   const [totalCost, setTotalCost] = useState(() => {
     let initialTotal = 0;
@@ -21,6 +25,9 @@ export default function Checkout({ Products }) {
     // setTotal(totalCost);
     setTotalCost(initialTotal);
   }, [Products, quantities]);
+
+  //dispatching value from here
+  dispatch(updateTotalCost(totalCost));
 
   const handleQuantityChange = (index, event) => {
     const newQuantities = [...quantities];

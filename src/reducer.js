@@ -4,7 +4,7 @@ const initialState = {
   calculatedvalue: 0,
 };
 
-export default costReducer = (state = initialState, action) => {
+function costReducer(state = initialState, action) {
   switch (action.type) {
     case Update_totalCost:
       return {
@@ -14,4 +14,6 @@ export default costReducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
+}
+
+export default costReducer;
