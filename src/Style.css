@@ -3,7 +3,6 @@
   height: 400px;
   display: grid;
   place-items: center;
-  /* background-color: rgb(196, 194, 194); */
 }
 
 .Parent_container {
@@ -58,6 +57,10 @@
   justify-content: space-between;
 }
 
+/* .dropdown_div > * {
+  margin-right: 100px;
+} */
+
 .form-control {
   font-size: 20px;
   border: none;
@@ -68,10 +71,13 @@
 .Total_div {
   height: 50px;
   width: calc(100% - 180px);
+  /* width: 50%; */
+  margin-right: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 170px;
+  margin-left: 300px;
+  /* border: 1px solid black; */
 }
 
 .Total_div > * {
@@ -101,6 +107,7 @@ h3 {
   place-items: center;
   background-color: rgb(129, 233, 233);
   border-radius: 20px;
+  padding: 0;
 }
 
 @media screen and (max-width: 650px) {
