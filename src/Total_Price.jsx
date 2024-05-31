@@ -10,19 +10,10 @@ const Total_Price = () => {
       <div className="grand_container_totalcost">
         <div className="Total_div">
           <div>
-            <h2>subtotal : </h2>
-          </div>
-          <div>
-            <h2>$ {Total_value}</h2>
-          </div>
-        </div>
-
-        <div className="Total_div">
-          <div>
             <h2>Total : </h2>
           </div>
           <div>
-            <h2 style={{ color: "red", fontWeight: 800 }}> $ {Total_value}</h2>
+            <h2 style={{ fontWeight: 800 }}> $ {Total_value}</h2>
           </div>
         </div>
       </div>

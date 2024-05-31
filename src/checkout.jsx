@@ -4,9 +4,8 @@ import { useDispatch } from "react-redux";
 import { updateTotalCost } from "./actions";
 
 export default function Checkout({ Products }) {
-  // const { setTotal } = useContext(TotalContext);
-
   const dispatch = useDispatch();
+
   const [quantities, setQuantities] = useState(Products.map(() => 1));
   const [totalCost, setTotalCost] = useState(() => {
     let initialTotal = 0;
@@ -29,18 +28,21 @@ export default function Checkout({ Products }) {
   //dispatching value from here
   dispatch(updateTotalCost(totalCost));
 
+  //event handler function to render selected quantity of items
   const handleQuantityChange = (index, event) => {
     const newQuantities = [...quantities];
     newQuantities[index] = parseInt(event.target.value);
     setQuantities(newQuantities);
   };
 
+  //function to calculate total cost of each product
   const calculateTotal = (index) => {
     return quantities[index] * Products[index].price;
   };
 
   return (
     <>
+      {/*using map function to map all products from the list of array object */}
       {Products.map((Product, index) => (
         <div className="Cart_Section" key={index}>
           <div className="Img_container">

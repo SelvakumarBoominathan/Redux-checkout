@@ -1,29 +1,26 @@
-.grand_container{
-  width : 100%;
-  height : 400px;
-  display : grid;
+.grand_container {
+  width: 100%;
+  height: 400px;
+  display: grid;
   place-items: center;
   /* background-color: rgb(196, 194, 194); */
-  
 }
 
-.Parent_container{
+.Parent_container {
   width: 70%;
   height: 400px;
-  
 }
 
-.Cart_Section{
+.Cart_Section {
   display: flex;
   height: 250px;
   /* border: 1px solid black; */
   display: flex;
   align-items: center;
   justify-content: space-around;
-
 }
 
-.Img_container{
+.Img_container {
   height: 100%;
   width: 20%;
   display: flex;
@@ -32,13 +29,13 @@
   object-fit: cover;
 }
 
-.Img_container > img{
+.Img_container > img {
   width: clamp(70px, 5vw, 100px);
   height: auto;
-  margin-left : 0;
+  margin-left: 0;
 }
 
-.productDetails_container{
+.productDetails_container {
   width: 30%;
   padding-top: 30px;
   text-align: left;
@@ -47,69 +44,68 @@
   justify-content: center;
 }
 
-.price_details{
+.price_details {
   width: 20%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: end;
   /* border: 1px solid black; */
 }
 
-.dropdown_div{
+.dropdown_div {
   display: flex;
   justify-content: space-between;
 }
 
-.form-control{
-  font-size:20px; 
+.form-control {
+  font-size: 20px;
   border: none;
-  width : clamp(30px, 3vw, 70px);
+  width: clamp(30px, 3vw, 70px);
   font-size: clamp(12px, 4vw, 21px);
 }
 
-.Total_div{
+.Total_div {
   height: 50px;
-  width : calc(100% - 180px);
+  width: calc(100% - 180px);
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-left: 170px;
 }
 
-.Total_div > *{
+.Total_div > * {
   width: 50%;
 }
 
-h2{
-  font-size: clamp(10px, 4vw, 21px)
+h2 {
+  font-size: clamp(10px, 4vw, 21px);
 }
-h4, p{
-  font-size: clamp(6px, 3vw, 15px)
+h4,
+p {
+  font-size: clamp(6px, 3vw, 15px);
 }
 
-.form-control{
+.form-control {
   margin-right: 25px;
 }
 
-h3{
-  margin : 0;
+h3 {
+  margin: 0;
 }
 
-.grand_container_totalcost{
-  width : 100%;
-  height : 300px;
-  display : grid;
+.grand_container_totalcost {
+  width: 100%;
+  height: 150px;
+  display: grid;
   place-items: center;
   background-color: rgb(129, 233, 233);
   border-radius: 20px;
 }
 
-
 @media screen and (max-width: 650px) {
-  .Total_div{
+  .Total_div {
     width: 100%;
     margin-left: 10px;
   }
-
 }
