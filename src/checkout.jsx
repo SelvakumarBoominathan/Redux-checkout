@@ -1,32 +1,42 @@
 import React, { useState, useEffect } from "react";
 import "./Style.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; 
 import { updateTotalCost, deleteProduct } from "./actions";
 
-export default function Checkout({ Products }) {
+export default function Checkout() {
   const dispatch = useDispatch();
 
+  //used useSelector to make the products to be rendered from redux.
+  const Products = useSelector((state) => state.cartProducts);
+
   const [quantities, setQuantities] = useState(Products.map(() => 1));
-  const [totalCost, setTotalCost] = useState(() => {
+
+  //Calculate initial cost
+  const calculateInitialTotalCost = () => {
     let initialTotal = 0;
     Products.forEach((product, index) => {
       initialTotal += product.price * quantities[index];
     });
     return initialTotal;
-  });
+  };
+
+  const [totalCost, setTotalCost] = useState(calculateInitialTotalCost);
 
   useEffect(() => {
     // Calculate initial total cost when Products or quantities change
-    let initialTotal = 0;
+    let newTotal = 0;
     Products.forEach((product, index) => {
-      initialTotal += product.price * quantities[index];
+      newTotal += product.price * quantities[index];
     });
-    // setTotal(totalCost);
-    setTotalCost(initialTotal);
-  }, [Products, quantities]);
 
-  //dispatching value from here
-  dispatch(updateTotalCost(totalCost));
+    setTotalCost(newTotal);
+
+    //dispatching value from here
+    dispatch(updateTotalCost(newTotal));
+  }, [Products, quantities, dispatch]);
+
+  // //dispatching value from here
+  // dispatch(updateTotalCost(totalCost));
 
   //event handler function to render selected quantity of items
   const handleQuantityChange = (index, event) => {
@@ -50,7 +60,7 @@ export default function Checkout({ Products }) {
     <>
       {/*using map function to map all products from the list of array object */}
       {Products.map((Product, index) => (
-        <div className="Cart_Section" key={index}>
+        <div className="Cart_Section" key={Product.id}>
           <div className="Img_container">
             <img src={Product.images} alt={Product.title}></img>
           </div>

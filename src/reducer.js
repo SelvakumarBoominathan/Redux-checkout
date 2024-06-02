@@ -93,7 +93,7 @@ function appReducer(state = initialState, action) {
       return {
         ...state,
         Products: state.cartProducts.filter(
-          (Product) => Product.id !== action.payload
+          (Product) => Product.id != action.payload
         ),
       };
 
