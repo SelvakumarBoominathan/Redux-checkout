@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Style.css";
 import { useDispatch } from "react-redux";
-import { updateTotalCost } from "./actions";
+import { updateTotalCost, deleteProduct } from "./actions";
 
 export default function Checkout({ Products }) {
   const dispatch = useDispatch();
@@ -40,6 +40,12 @@ export default function Checkout({ Products }) {
     return quantities[index] * Products[index].price;
   };
 
+  //function to perform handle delete
+
+  const handleDelete = (productID) => {
+    dispatch(deleteProduct(productID));
+  };
+
   return (
     <>
       {/*using map function to map all products from the list of array object */}
@@ -53,6 +59,14 @@ export default function Checkout({ Products }) {
             <h4>{Product.title}</h4>
             <p>{Product.starrating}</p>
             <h2>$ {Product.price}</h2>
+            <button
+              className="Del-btn"
+              onClick={() => {
+                handleDelete(Product.id);
+              }}
+            >
+              Delete
+            </button>
           </div>
           <div className="price_details">
             <div className="dropdown_div">

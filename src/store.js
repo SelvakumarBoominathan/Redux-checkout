@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
-import costReducer from "./reducer";
+import appReducer from "./reducer";
 
-const store = createStore(costReducer);
+const store = createStore(appReducer);
 
 export default store;
