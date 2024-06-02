@@ -29,65 +29,37 @@ This project is a simple shopping cart page implemented using React and Redux. I
    git clone https://github.com/SelvakumarBoominathan/Redux-checkout.git
    ```
 
-2. **Install dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm start
-   ```
-
 ## Usage
 
-Open your web browser and navigate to `http://localhost:3000` to view the cart page. You can increase the quantity of each product, delete products, and see the total price updated accordingly.
+Open your web browser and navigate to `http://localhost:5174` to view the cart page. You can increase the quantity of each product, delete products, and see the total price updated accordingly.
 
 ## Components
 
 ### `App.js`
 
-The main component that renders the cart page. It combines `Cart` and `TotalPrice` components.
+The main component that renders the cart page. It combines `Checkout` and `Total_Price` components.
 
-### `Cart.js`
+### `Checkout.jsx`
 
 A component that displays the list of products in the cart, including:
 
 - Product name
+- Product model
 - Product price
+- Product image
+- Product rating (Star)
 - Input to change quantity (up to 10)
 - Button to delete the product
+- Product total price per quantity
 
-### `TotalPrice.js`
+### `Total_Price.jsx`
 
 A component that displays the total price of all products in the cart.
 
-## Redux Store
-
-### State Structure
-
-The Redux state has the following structure:
-
-```javascript
-{
-  app: {
-    products: [
-      { id: 1, name: 'Product 1', price: 100 },
-      { id: 2, name: 'Product 2', price: 200 },
-      // ...
-    ],
-    quantities: [1, 2, 1, ...], // Corresponding quantities for each product
-    totalCost: 0 // Total cost of all products in the cart
-  }
-}
-```
-
 ### Actions
 
-- `setTotalCost(totalCost)`: Sets the total cost of all products.
-- `setQuantities(quantities)`: Sets the quantities of products.
-- `setProducts(products)`: Sets the list of products.
+- `updateTotalCost(newTotal)`: Sets the total cost of all products.
+- `deleteProduct(productID`: Removes the deleted product from the cart.
 
 ### Reducers
 
@@ -95,10 +67,6 @@ The reducers handle updating the state based on the dispatched actions.
 
 ### Store Configuration
 
-The Redux store is configured in `store.js` using `@reduxjs/toolkit`.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The Redux store is configured in `store.js` using `redux`.
 
 ---
