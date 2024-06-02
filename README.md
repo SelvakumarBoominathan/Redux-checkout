@@ -18,8 +18,6 @@ This project is a simple shopping cart page implemented using React and Redux. I
 - [Installation](#installation)
 - [Usage](#usage)
 - [Components](#components)
-- [Redux Store](#redux-store)
-- [License](#license)
 
 ## Installation
 
