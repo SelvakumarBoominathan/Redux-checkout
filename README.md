@@ -1,9 +1,4 @@
 # React Redux
-
-## Cart items managing page using React + Redux to enable state management and centralizing state.
-
-It is a simple cart page to increase product quantity upto 10 for each. Also to calculate the overall price for all the products in the cart. there is a functionality to delete the product aswell and the total price will also recalculated per the available items in the cart.
-
 # Simple Cart Page
 
 This project is a simple shopping cart page implemented using React and Redux. It allows users to:
