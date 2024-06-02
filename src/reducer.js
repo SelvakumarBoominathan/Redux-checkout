@@ -92,7 +92,7 @@ function appReducer(state = initialState, action) {
     case DELETE_PRODUCT:
       return {
         ...state,
-        Products: state.cartProducts.filter(
+        cartProducts: state.cartProducts.filter(
           (Product) => Product.id != action.payload
         ),
       };
